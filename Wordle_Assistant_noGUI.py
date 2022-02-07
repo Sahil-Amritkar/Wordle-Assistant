@@ -3,8 +3,10 @@ import linecache
 def eliminate(letter_positions, word, colours):
     for i in range(len(word)):
         if(colours[i]=='b'):
-            del letter_positions[word[i]]
-
+            try:
+                del letter_positions[word[i]]
+            except:
+                temp=1
         elif(colours[i]=='y'):
             try:
                 letter_positions[word[i]].remove(i+1)
